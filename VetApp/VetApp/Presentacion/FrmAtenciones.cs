@@ -85,5 +85,10 @@ namespace VetApp.Vistas
 
            
         }
+
+        private void LblEdad_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

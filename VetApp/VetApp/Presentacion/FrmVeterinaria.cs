@@ -7,24 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VetApp.Presentacion;
+using VetApp.Datos;
+using VetApp.Dominio;
 using VetApp.Vistas;
 
 namespace VetApp
 {
     public partial class FrmVeterinaria : Form
     {
+        private DbHelper gestor;
         public FrmVeterinaria()
         {
             InitializeComponent();
-        
+            gestor = new DbHelper();
         }
 
-        private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmCliente frm = new FrmCliente();
-            frm.ShowDialog();
-        }
+        
 
         private void nuevaAtencionToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -47,12 +45,62 @@ namespace VetApp
 
         private void FrmVeterinaria_Load(object sender, EventArgs e)
         {
-
+            LblNroCliente.Text =LblNroCliente.Text+gestor.ProximoCliente().ToString();
         }
 
         private void mascotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            if (Validar())
+            {
+                Cliente cliente = new Cliente();
+                cliente.Nombre = TxtNombreCliente.Text;
+                if (rbtHombre.Checked)
+                {
+                    cliente.Sexo = 1;
+                }
+                else
+                {
+                    cliente.Sexo = 0;
+                }
+                gestor.AgregarCliente(cliente);
+                MessageBox.Show("Se agrego con exito el Cliente!", "Agregando", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo aniadir el cliente");
+            }
+        }
+        private bool Validar()
+        {
+            if (TxtNombreCliente.Text == "")
+            {
+                MessageBox.Show("Debe ingresar una nombre valido..", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TxtNombreCliente.Focus();
+                return false;
+            }
+            if (rbtHombre.Checked == false && rbtMujer.Checked == false)
+            {
+                MessageBox.Show("Seleccione un sexo..", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                rbtHombre.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

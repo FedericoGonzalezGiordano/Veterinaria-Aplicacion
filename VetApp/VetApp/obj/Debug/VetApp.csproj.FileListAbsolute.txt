@@ -34,3 +34,14 @@ C:\Users\Federico gonzalez\Desktop\VeterinariaApp-V0.5\VetApp\obj\Debug\VetApp.c
 C:\Users\Federico gonzalez\Desktop\VeterinariaApp-V0.5\VetApp\obj\Debug\VetApp.csproj.CoreCompileInputs.cache
 C:\Users\Federico gonzalez\Desktop\VeterinariaApp-V0.5\VetApp\obj\Debug\VetApp.exe
 C:\Users\Federico gonzalez\Desktop\VeterinariaApp-V0.5\VetApp\obj\Debug\VetApp.pdb
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\bin\Debug\VetApp.exe.config
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\bin\Debug\VetApp.exe
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\bin\Debug\VetApp.pdb
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.csproj.AssemblyReference.cache
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.Properties.Resources.resources
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.FrmVeterinaria.resources
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.Vistas.FrmAtenciones.resources
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.csproj.GenerateResource.cache
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.csproj.CoreCompileInputs.cache
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.exe
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.pdb

@@ -51,12 +51,6 @@
     <Compile Include="Dominio\Atencion.cs" />
     <Compile Include="Dominio\Cliente.cs" />
     <Compile Include="Dominio\Mascota.cs" />
-    <Compile Include="Presentacion\FrmCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\FrmCliente.Designer.cs">
-      <DependentUpon>FrmCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\FrmVeterinaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,9 +65,6 @@
     <Compile Include="Presentacion\FrmAtenciones.Designer.cs">
       <DependentUpon>FrmAtenciones.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Presentacion\FrmCliente.resx">
-      <DependentUpon>FrmCliente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
