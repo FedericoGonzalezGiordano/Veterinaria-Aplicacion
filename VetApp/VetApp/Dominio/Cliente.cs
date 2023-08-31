@@ -15,11 +15,11 @@ namespace VetApp.Dominio
 
         public List<Mascota> lstMascotas { get; set; }
 
-        public Cliente(string Nombre, int Sexo, int IdCliente)
+        public Cliente(int IdCliente,string Nombre, int Sexo)
         {
+            this.IdCliente = IdCliente;
             this.Nombre = Nombre;
             this.Sexo = Sexo;
-            this.IdCliente = IdCliente;
         }
 
         public Cliente()
@@ -29,6 +29,7 @@ namespace VetApp.Dominio
             IdCliente = 0;
             lstMascotas = new List<Mascota>();
         }
+        
 
       
 

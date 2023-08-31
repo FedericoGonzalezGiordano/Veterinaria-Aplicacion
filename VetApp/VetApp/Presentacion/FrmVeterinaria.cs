@@ -45,6 +45,7 @@ namespace VetApp
 
         private void FrmVeterinaria_Load(object sender, EventArgs e)
         {
+          
             LblNroCliente.Text =LblNroCliente.Text+gestor.ProximoCliente().ToString();
         }
 
@@ -62,6 +63,7 @@ namespace VetApp
                 if (rbtHombre.Checked)
                 {
                     cliente.Sexo = 1;
+                   
                 }
                 else
                 {
@@ -69,11 +71,14 @@ namespace VetApp
                 }
                 gestor.AgregarCliente(cliente);
                 MessageBox.Show("Se agrego con exito el Cliente!", "Agregando", MessageBoxButtons.OK);
+                DgvClientes.Rows.Add(new object[] { cliente.Nombre, cliente.Sexo, "Agregar Mascota" });
             }
             else
             {
                 MessageBox.Show("No se pudo aniadir el cliente");
             }
+
+            
         }
         private bool Validar()
         {

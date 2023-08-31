@@ -33,6 +33,10 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atencionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarAtencionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mascotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,10 +51,7 @@
             this.LblSexo = new System.Windows.Forms.Label();
             this.LblNombre = new System.Windows.Forms.Label();
             this.LblNroCliente = new System.Windows.Forms.Label();
-            this.mascotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarAtencionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +80,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -98,6 +99,33 @@
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
+            // 
+            // eliminarAtencionToolStripMenuItem
+            // 
+            this.eliminarAtencionToolStripMenuItem.Name = "eliminarAtencionToolStripMenuItem";
+            this.eliminarAtencionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarAtencionToolStripMenuItem.Text = "Eliminar Atencion";
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarToolStripMenuItem.Text = "Modificar";
+            // 
+            // mascotasToolStripMenuItem
+            // 
+            this.mascotasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultaToolStripMenuItem1,
+            this.verToolStripMenuItem});
+            this.mascotasToolStripMenuItem.Name = "mascotasToolStripMenuItem";
+            this.mascotasToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.mascotasToolStripMenuItem.Text = "Mascotas";
+            // 
+            // consultaToolStripMenuItem1
+            // 
+            this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
+            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem1.Text = "Consulta";
             // 
             // BtnModificar
             // 
@@ -227,31 +255,11 @@
             this.LblNroCliente.TabIndex = 12;
             this.LblNroCliente.Text = "Nro Cliente ";
             // 
-            // mascotasToolStripMenuItem
+            // verToolStripMenuItem
             // 
-            this.mascotasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultaToolStripMenuItem1});
-            this.mascotasToolStripMenuItem.Name = "mascotasToolStripMenuItem";
-            this.mascotasToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.mascotasToolStripMenuItem.Text = "Mascotas";
-            // 
-            // consultaToolStripMenuItem1
-            // 
-            this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
-            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.consultaToolStripMenuItem1.Text = "Consulta";
-            // 
-            // eliminarAtencionToolStripMenuItem
-            // 
-            this.eliminarAtencionToolStripMenuItem.Name = "eliminarAtencionToolStripMenuItem";
-            this.eliminarAtencionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eliminarAtencionToolStripMenuItem.Text = "Eliminar Atencion";
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modificarToolStripMenuItem.Text = "Modificar";
+            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verToolStripMenuItem.Text = "Ver";
             // 
             // FrmVeterinaria
             // 
@@ -309,6 +317,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem eliminarAtencionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
     }
 }
 
