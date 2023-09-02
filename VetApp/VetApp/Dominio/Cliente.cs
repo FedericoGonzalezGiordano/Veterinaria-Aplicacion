@@ -30,10 +30,22 @@ namespace VetApp.Dominio
             lstMascotas = new List<Mascota>();
         }
         
-
+        public string SexoCliente() 
+        {
+            string sexo=string.Empty;
+            if (Sexo == 1)
+            {
+                sexo = "Hombre";
+            }
+            else 
+            {
+                sexo = "Mujer";
+            }
+            return sexo;
+        }
       
 
-
+        //public 
         
     }
 }

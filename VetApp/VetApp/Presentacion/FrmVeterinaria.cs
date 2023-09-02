@@ -45,7 +45,9 @@ namespace VetApp
 
         private void FrmVeterinaria_Load(object sender, EventArgs e)
         {
-          
+            DataTable tabla= new DataTable();
+            tabla = gestor.Consultar("sp_cliente");
+            DgvClientes.DataSource = tabla;
             LblNroCliente.Text =LblNroCliente.Text+gestor.ProximoCliente().ToString();
         }
 
@@ -60,18 +62,22 @@ namespace VetApp
             {
                 Cliente cliente = new Cliente();
                 cliente.Nombre = TxtNombreCliente.Text;
+                string sexo=string.Empty;
                 if (rbtHombre.Checked)
                 {
                     cliente.Sexo = 1;
-                   
+                    
                 }
                 else
                 {
                     cliente.Sexo = 0;
+                   
+                    
                 }
+                
                 gestor.AgregarCliente(cliente);
                 MessageBox.Show("Se agrego con exito el Cliente!", "Agregando", MessageBoxButtons.OK);
-                DgvClientes.Rows.Add(new object[] { cliente.Nombre, cliente.Sexo, "Agregar Mascota" });
+                
             }
             else
             {
@@ -106,6 +112,12 @@ namespace VetApp
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void DgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TxtNombreCliente.Text = DgvClientes.CurrentRow.Cells[2].Value.ToString();
+            //rbtHombre.Checked = DgvClientes.CurrentRow.Cells[1].Value.ToString();
         }
     }
 }
