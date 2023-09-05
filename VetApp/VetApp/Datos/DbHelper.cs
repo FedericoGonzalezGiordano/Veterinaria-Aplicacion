@@ -14,16 +14,10 @@ namespace VetApp.Datos
     {
         private SqlConnection conexion;
         private string cadenaConexion;
-        
-        
-        
-   
-
-
-
+       
         public DbHelper()
         {
-               cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=VetApp;Integrated Security=True";
+               cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=Veterinaria2023;Integrated Security=True";
                conexion = new SqlConnection(cadenaConexion);
          
         }
@@ -53,6 +47,7 @@ namespace VetApp.Datos
             comando.CommandText = "SP_INSERTAR_CLIENTE";
             comando.Parameters.AddWithValue("@Nombre", cliente.Nombre);
             comando.Parameters.AddWithValue("@Sexo", cliente.Sexo);
+        
             comando.ExecuteNonQuery();
             conexion.Close();
            

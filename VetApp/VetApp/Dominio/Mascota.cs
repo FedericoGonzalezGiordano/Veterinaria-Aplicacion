@@ -35,6 +35,14 @@ namespace VetApp.Dominio
         {
             return Nombre + ", " + Tipo; ;
         }
+        public void AgregarAtencion(Atencion atencion)
+        {
+            lstAtenciones.Add(atencion);
+        }
+        public void QuitarAtencion(int indice)
+        {
+            lstAtenciones.RemoveAt(indice);
+        }
 
     }
 }

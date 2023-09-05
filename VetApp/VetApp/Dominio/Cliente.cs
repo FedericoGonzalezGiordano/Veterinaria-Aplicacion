@@ -30,22 +30,17 @@ namespace VetApp.Dominio
             lstMascotas = new List<Mascota>();
         }
         
-        public string SexoCliente() 
+       
+        public void AgregarMascota(Mascota mascota)
         {
-            string sexo=string.Empty;
-            if (Sexo == 1)
-            {
-                sexo = "Hombre";
-            }
-            else 
-            {
-                sexo = "Mujer";
-            }
-            return sexo;
+            lstMascotas.Add(mascota);
         }
-      
+       
 
-        //public 
-        
+        public override string ToString()
+        {
+            return "Nombre del Cliente: " + Nombre;
+        }
+
     }
 }
