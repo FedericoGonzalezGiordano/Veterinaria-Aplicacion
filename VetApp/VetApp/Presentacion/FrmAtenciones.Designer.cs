@@ -32,6 +32,10 @@
             this.LblNroAtencion = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.DgvAtenciones = new System.Windows.Forms.DataGridView();
+            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.LblNombre = new System.Windows.Forms.Label();
             this.LblEdad = new System.Windows.Forms.Label();
             this.LblTipo = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@
             this.txtTratatamiento = new System.Windows.Forms.TextBox();
             this.LblImporte = new System.Windows.Forms.Label();
             this.TxtImporte = new System.Windows.Forms.TextBox();
-            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAtenciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +88,33 @@
             this.DgvAtenciones.Size = new System.Drawing.Size(443, 138);
             this.DgvAtenciones.TabIndex = 11;
             this.DgvAtenciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAtenciones_CellContentClick);
+            // 
+            // ColFecha
+            // 
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ColFecha.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColFecha.HeaderText = "Fecha";
+            this.ColFecha.Name = "ColFecha";
+            this.ColFecha.ReadOnly = true;
+            // 
+            // ColDescripcion
+            // 
+            this.ColDescripcion.HeaderText = "Tratamiento";
+            this.ColDescripcion.Name = "ColDescripcion";
+            this.ColDescripcion.ReadOnly = true;
+            // 
+            // ColImporte
+            // 
+            this.ColImporte.HeaderText = "Importe";
+            this.ColImporte.Name = "ColImporte";
+            this.ColImporte.ReadOnly = true;
+            // 
+            // ColAcciones
+            // 
+            this.ColAcciones.HeaderText = "Acciones";
+            this.ColAcciones.Name = "ColAcciones";
+            this.ColAcciones.ReadOnly = true;
             // 
             // LblNombre
             // 
@@ -141,6 +168,7 @@
             this.BtnAceptar.TabIndex = 12;
             this.BtnAceptar.Text = "Aceptar";
             this.BtnAceptar.UseVisualStyleBackColor = true;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // BtnCancelar
             // 
@@ -227,33 +255,6 @@
             this.TxtImporte.Name = "TxtImporte";
             this.TxtImporte.Size = new System.Drawing.Size(128, 20);
             this.TxtImporte.TabIndex = 23;
-            // 
-            // ColFecha
-            // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ColFecha.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ColFecha.HeaderText = "Fecha";
-            this.ColFecha.Name = "ColFecha";
-            this.ColFecha.ReadOnly = true;
-            // 
-            // ColDescripcion
-            // 
-            this.ColDescripcion.HeaderText = "Tratamiento";
-            this.ColDescripcion.Name = "ColDescripcion";
-            this.ColDescripcion.ReadOnly = true;
-            // 
-            // ColImporte
-            // 
-            this.ColImporte.HeaderText = "Importe";
-            this.ColImporte.Name = "ColImporte";
-            this.ColImporte.ReadOnly = true;
-            // 
-            // ColAcciones
-            // 
-            this.ColAcciones.HeaderText = "Acciones";
-            this.ColAcciones.Name = "ColAcciones";
-            this.ColAcciones.ReadOnly = true;
             // 
             // FrmAtenciones
             // 

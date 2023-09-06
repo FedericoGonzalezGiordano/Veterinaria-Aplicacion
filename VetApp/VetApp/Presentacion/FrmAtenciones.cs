@@ -15,7 +15,7 @@ namespace VetApp.Vistas
     public partial class FrmAtenciones : Form 
     {
         DbHelper gestor;
-           
+        Cliente cliente;   
         Mascota mascota;
       
 
@@ -24,7 +24,7 @@ namespace VetApp.Vistas
         {
             InitializeComponent();
             gestor= new DbHelper();
-           
+            cliente= new Cliente();
             mascota= new Mascota();
         }
 
@@ -155,6 +155,19 @@ namespace VetApp.Vistas
                 DgvAtenciones.Rows.RemoveAt(DgvAtenciones.CurrentRow.Index);
                 
             }
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            if (validar() && DgvAtenciones.Rows.Count!=0 )
+            {
+                GrabarAtencion();
+            }
+        }
+
+        private void GrabarAtencion()
+        {
+            
         }
     }
 }
