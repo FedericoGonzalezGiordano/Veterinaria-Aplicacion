@@ -13,18 +13,27 @@ namespace VetApp.Dominio
         public double Importe { get; set; }
         public DateTime Fecha { get; set; }
 
-        
+
 
         public Atencion()
         {
             IdAtencion = 0;
             Descripcion = string.Empty;
-            Importe = 0;   
+            Importe = 0;
             Fecha = DateTime.Today;
-            
+
+        }
+        public Atencion(string Descripcion, double Importe, DateTime Fecha)
+        {
+            this.Descripcion = Descripcion;
+            this.Importe = Importe; 
+            this.Fecha = Fecha;
         }
 
-        
+
+
+
+
 
     }
 }

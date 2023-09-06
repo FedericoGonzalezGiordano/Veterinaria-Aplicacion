@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblNroAtencion = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.DgvMascotas = new System.Windows.Forms.DataGridView();
-            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAcciones = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DgvAtenciones = new System.Windows.Forms.DataGridView();
             this.LblNombre = new System.Windows.Forms.Label();
             this.LblEdad = new System.Windows.Forms.Label();
             this.LblTipo = new System.Windows.Forms.Label();
@@ -51,7 +48,11 @@
             this.txtTratatamiento = new System.Windows.Forms.TextBox();
             this.LblImporte = new System.Windows.Forms.Label();
             this.TxtImporte = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvMascotas)).BeginInit();
+            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAtenciones)).BeginInit();
             this.SuspendLayout();
             // 
             // LblNroAtencion
@@ -71,45 +72,22 @@
             this.TxtNombre.Size = new System.Drawing.Size(317, 20);
             this.TxtNombre.TabIndex = 4;
             // 
-            // DgvMascotas
+            // DgvAtenciones
             // 
-            this.DgvMascotas.AllowUserToAddRows = false;
-            this.DgvMascotas.AllowUserToDeleteRows = false;
-            this.DgvMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMascotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvAtenciones.AllowUserToAddRows = false;
+            this.DgvAtenciones.AllowUserToDeleteRows = false;
+            this.DgvAtenciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvAtenciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColFecha,
             this.ColDescripcion,
             this.ColImporte,
             this.ColAcciones});
-            this.DgvMascotas.Location = new System.Drawing.Point(71, 263);
-            this.DgvMascotas.Name = "DgvMascotas";
-            this.DgvMascotas.ReadOnly = true;
-            this.DgvMascotas.Size = new System.Drawing.Size(443, 138);
-            this.DgvMascotas.TabIndex = 11;
-            // 
-            // ColFecha
-            // 
-            this.ColFecha.HeaderText = "Fecha";
-            this.ColFecha.Name = "ColFecha";
-            this.ColFecha.ReadOnly = true;
-            // 
-            // ColDescripcion
-            // 
-            this.ColDescripcion.HeaderText = "Tratamiento";
-            this.ColDescripcion.Name = "ColDescripcion";
-            this.ColDescripcion.ReadOnly = true;
-            // 
-            // ColImporte
-            // 
-            this.ColImporte.HeaderText = "Importe";
-            this.ColImporte.Name = "ColImporte";
-            this.ColImporte.ReadOnly = true;
-            // 
-            // ColAcciones
-            // 
-            this.ColAcciones.HeaderText = "Acciones";
-            this.ColAcciones.Name = "ColAcciones";
-            this.ColAcciones.ReadOnly = true;
+            this.DgvAtenciones.Location = new System.Drawing.Point(71, 263);
+            this.DgvAtenciones.Name = "DgvAtenciones";
+            this.DgvAtenciones.ReadOnly = true;
+            this.DgvAtenciones.Size = new System.Drawing.Size(443, 138);
+            this.DgvAtenciones.TabIndex = 11;
+            this.DgvAtenciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAtenciones_CellContentClick);
             // 
             // LblNombre
             // 
@@ -250,6 +228,33 @@
             this.TxtImporte.Size = new System.Drawing.Size(128, 20);
             this.TxtImporte.TabIndex = 23;
             // 
+            // ColFecha
+            // 
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ColFecha.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColFecha.HeaderText = "Fecha";
+            this.ColFecha.Name = "ColFecha";
+            this.ColFecha.ReadOnly = true;
+            // 
+            // ColDescripcion
+            // 
+            this.ColDescripcion.HeaderText = "Tratamiento";
+            this.ColDescripcion.Name = "ColDescripcion";
+            this.ColDescripcion.ReadOnly = true;
+            // 
+            // ColImporte
+            // 
+            this.ColImporte.HeaderText = "Importe";
+            this.ColImporte.Name = "ColImporte";
+            this.ColImporte.ReadOnly = true;
+            // 
+            // ColAcciones
+            // 
+            this.ColAcciones.HeaderText = "Acciones";
+            this.ColAcciones.Name = "ColAcciones";
+            this.ColAcciones.ReadOnly = true;
+            // 
             // FrmAtenciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,13 +276,13 @@
             this.Controls.Add(this.LblTipo);
             this.Controls.Add(this.LblEdad);
             this.Controls.Add(this.LblNombre);
-            this.Controls.Add(this.DgvMascotas);
+            this.Controls.Add(this.DgvAtenciones);
             this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.LblNroAtencion);
             this.Name = "FrmAtenciones";
             this.Text = "FrmAtenciones";
             this.Load += new System.EventHandler(this.FrmAtenciones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvMascotas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAtenciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,7 +292,7 @@
 
         private System.Windows.Forms.Label LblNroAtencion;
         private System.Windows.Forms.TextBox TxtNombre;
-        private System.Windows.Forms.DataGridView DgvMascotas;
+        private System.Windows.Forms.DataGridView DgvAtenciones;
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.Label LblEdad;
         private System.Windows.Forms.Label LblTipo;
@@ -298,15 +303,15 @@
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Label LblCliente;
         private System.Windows.Forms.ComboBox CboCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColImporte;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColAcciones;
         private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.TextBox TxtFecha;
         private System.Windows.Forms.Label LblTratamiento;
         private System.Windows.Forms.TextBox txtTratatamiento;
         private System.Windows.Forms.Label LblImporte;
         private System.Windows.Forms.TextBox TxtImporte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColImporte;
+        private System.Windows.Forms.DataGridViewButtonColumn ColAcciones;
     }
 }
