@@ -3,14 +3,14 @@ use VetApp
 
 create table tipos_mascotas
 (
- id_tipo_mascota int identity (1,1)not null,
+ id_tipo_mascota int identity (0,1)not null,
  descripcion varchar(70),
  constraint pk_id_tipo primary key(id_tipo_mascota)
 )
 
 create table clientes
 (
- id_cliente int identity (1,1)not null,
+ id_cliente int identity (0,1)not null,
  nombre varchar(40),
  sexo int
  constraint pk_cliente primary key(id_cliente)
@@ -40,21 +40,17 @@ create table atenciones
  constraint fk_mascota foreign key(mascota) references mascotas(id_mascota)
 )
 
-INSERT INTO TIPOS VALUES ('PERRO')
-INSERT INTO TIPOS VALUES ('GATO')
-INSERT INTO TIPOS VALUES ('ARAÑA')
-INSERT INTO TIPOS VALUES ('IGUANA')
+INSERT INTO tipos_mascotas VALUES ('PERRO')
+INSERT INTO tipos_mascotas VALUES ('GATO')
+INSERT INTO tipos_mascotas VALUES ('ARAÑA')
+INSERT INTO tipos_mascotas VALUES ('IGUANA')
 
 INSERT INTO CLIENTES VALUES ('PEPE', '1')
 INSERT INTO CLIENTES VALUES ('JUAN', '1')
-INSERT INTO CLIENTES VALUES ('PEPA', '0')
-INSERT INTO CLIENTES VALUES ('JUANA', '0')
+INSERT INTO CLIENTES VALUES ('PEPA', '2')
+INSERT INTO CLIENTES VALUES ('JUANA', '2')
 
-INSERT INTO MASCOTAS VALUES ('TITAN', 12, 1, 1)
-INSERT INTO MASCOTAS VALUES ('BOBY', 13, 2, 1)
-INSERT INTO MASCOTAS VALUES ('DYLAN', 5, 3, 2)
-INSERT INTO MASCOTAS VALUES ('ROCKY', 7, 4, 3)
-INSERT INTO MASCOTAS VALUES ('BOB MARLEY', 9, 2, 4)
+
 CREATE PROCEDURE SP_CONSULTAR_MASCOTAS
 AS
 BEGIN
@@ -71,18 +67,11 @@ BEGIN
 END
 
 
-
-
-
-
 create procedure sp_tipo_mascota
 as 
 begin
 select * from tipos_mascotas 
 end
-
-
-
 
 create procedure sp_cliente
 as 
@@ -90,36 +79,26 @@ begin
 select * from clientes 
 end
 
-
-
-
-
-CREATE PROCEDURE SP_INSERTAR_CLIENTE(
-    @Nombre VARCHAR(50),
-    @Sexo INT
+CREATE PROCEDURE SP_INSERTAR_MASCOTA
+@id_mascota int OUTPUT,
+@nombre varchar(50),
+@edad int,
+@tipo int,
+@cliente int
 AS
 BEGIN
-    INSERT INTO Clientes(Nombre, Sexo)
-    VALUES (@Nombre, @Sexo)
+INSERT INTO mascotas(nombre,edad,tipo,cliente)
+VALUES(@nombre,@edad,@tipo,@cliente)
+SET @id_mascota =SCOPE_IDENTITY();
 END
 
-
-
-CREATE PROCEDURE SP_MODIFICAR_CLIENTE
-    @id_cliente INT,
-    @Nombre VARCHAR(50),
-    @Sexo INT
+CREATE PROCEDURE SP_INSERTAR_ATENCION
+@descripcion varchar(40),
+@importe decimal(18,0),
+@fecha datetime,
+@mascota int
 AS
 BEGIN
-    UPDATE Clientes
-    SET nombre=@Nombre, sexo=@Sexo
-    WHERE  id_cliente=@id_cliente
-END
-
-
-CREATE PROCEDURE SP_PROXIMO_CLIENTE
-@nroCliente int OUTPUT
-AS
-BEGIN
-    SET @nroCliente = (SELECT MAX(id_cliente)+1  FROM clientes);
+INSERT INTO atenciones(descripcion,importe,fecha,mascota)
+VALUES(@descripcion,@importe,GETDATE(),@mascota)
 END

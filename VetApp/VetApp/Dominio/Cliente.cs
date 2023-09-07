@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VetApp.Vistas;
 
 namespace VetApp.Dominio
 {
@@ -43,5 +44,6 @@ namespace VetApp.Dominio
             return "Nombre del Cliente: " + Nombre;
         }
 
+       
     }
 }

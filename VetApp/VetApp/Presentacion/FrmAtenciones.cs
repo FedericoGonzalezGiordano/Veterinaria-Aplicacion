@@ -17,15 +17,15 @@ namespace VetApp.Vistas
         DbHelper gestor;
         Cliente cliente;   
         Mascota mascota;
+        Atencion atencion;
       
-
-
         public FrmAtenciones()
         {
             InitializeComponent();
             gestor= new DbHelper();
             cliente= new Cliente();
             mascota= new Mascota();
+            atencion = new Atencion();
         }
 
         private void FrmAtenciones_Load(object sender, EventArgs e)
@@ -36,8 +36,21 @@ namespace VetApp.Vistas
 
             cargarCliente();
             cargarTipo();
-            
-            //LblNroAtencion.Text = LblNroAtencion.Text + " " + Gestor.ProximaAtencion().ToString();
+
+            LblNroAtencion.Text = LblNroAtencion.Text + " " + gestor.ProximaAtencion().ToString();
+        }
+
+        public int ObtenerIdClienteSeleccionado()
+        {
+
+            if (CboCliente.SelectedItem is Cliente clienteSeleccionado)
+            {
+                return clienteSeleccionado.IdCliente; // Reemplaza "Id" con el nombre de la propiedad que almacena el ID del cliente
+            }
+            else
+            {
+                throw new InvalidOperationException("No se ha seleccionado ningún cliente válido.");
+            }
         }
 
         private void cargarCliente()
@@ -67,9 +80,6 @@ namespace VetApp.Vistas
                 int id = Convert.ToInt32(item.Row.ItemArray[0]);
                 string nom = item.Row.ItemArray[1].ToString();
                 int sexo = Convert.ToInt32(item.Row.ItemArray[2].ToString());
-
-
-
 
                 mascota.Nombre = TxtNombre.Text;
                 mascota.Tipo = cboTipo.SelectedIndex;
@@ -161,13 +171,32 @@ namespace VetApp.Vistas
         {
             if (validar() && DgvAtenciones.Rows.Count!=0 )
             {
-                GrabarAtencion();
+                GuardarAtencion();
             }
         }
 
-        private void GrabarAtencion()
+        private void GuardarAtencion()
         {
-            
+            mascota.Nombre = TxtNombre.Text;
+            mascota.Edad=Convert.ToInt32(TxtEdad.Text);
+            mascota.Tipo = Convert.ToInt32(cboTipo.SelectedIndex);
+            cliente.IdCliente = Convert.ToInt32(CboCliente.SelectedIndex);
+            atencion.Descripcion=txtTratatamiento.Text;
+            atencion.Importe = Convert.ToDouble(TxtImporte.Text);
+            atencion.Fecha = Convert.ToDateTime(TxtFecha.Text);
+
+            if (gestor.Confirmar(cliente,mascota,atencion))
+            {
+                MessageBox.Show("Se Guardo con exito la atencion", "Guardando", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("No se pudo registrar la atencion!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
+
+
     }
 }
