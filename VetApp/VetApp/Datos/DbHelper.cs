@@ -20,7 +20,7 @@ namespace VetApp.Datos
        
         public DbHelper()
         {
-               cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=VetApp_0_3;Integrated Security=True";
+               cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=VetApp_0_4;Integrated Security=True";
                conexion = new SqlConnection(cadenaConexion);
          
         }

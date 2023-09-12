@@ -107,17 +107,16 @@ join atenciones a on a.mascota=m.id_mascota
 where c.nombreC=@nombreC and m.nombreM=@nombreM
 END
 
-CREATE procedure SP_CONSULTA_MASCOTAS
+create procedure SP_CONSULTA_MASCOTAS
 @atencion int
 as
 begin
-select m.id_mascota,m.nombreM,edad,t.descripcion,c.nombreC
-from mascotas m join atenciones a on m.id_mascota=a.mascota 
+select cod_mascota,nombreM,edad,descripcion,nombreC
+from mascotas m join atenciones a on m.cod_mascota=a.mascota 
 join tipos_mascotas t on t.id_tipo_mascota=m.tipo
 join clientes c on c.id_cliente=m.cliente
 where a.id_atencion=@atencion
 end
-
 
 
 

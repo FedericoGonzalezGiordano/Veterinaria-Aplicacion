@@ -38,7 +38,7 @@ namespace VetApp.Presentacion
 
             foreach (DataRow fila in dt.Rows)
             {
-                DgvMascotas.Rows.Add(new object[] { fila["id_mascota"].ToString(),
+                DgvMascotas.Rows.Add(new object[] { Convert.ToInt32(fila["cod_mascota"].ToString()),
                                                         fila["nombreM"].ToString(),
                                                         fila["edad"].ToString(),
                                                         fila["descripcion"].ToString(),
