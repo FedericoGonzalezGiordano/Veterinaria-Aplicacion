@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using VetApp.Dominio;
 using System.Security.Cryptography.X509Certificates;
+using VetApp.Presentacion;
+using System.Drawing;
 
 namespace VetApp.Datos
 {
@@ -18,7 +20,7 @@ namespace VetApp.Datos
        
         public DbHelper()
         {
-               cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=VetApp;Integrated Security=True";
+               cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=VetApp_0_3;Integrated Security=True";
                conexion = new SqlConnection(cadenaConexion);
          
         }
@@ -39,37 +41,9 @@ namespace VetApp.Datos
             return (int)parametro.Value;
         }
 
-        public void AgregarCliente(Cliente cliente)
-        {
-            conexion.Open();
-            SqlCommand comando=new SqlCommand();
-            comando.Connection = conexion;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "SP_INSERTAR_CLIENTE";
-            comando.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-            comando.Parameters.AddWithValue("@Sexo", cliente.Sexo);
-        
-            comando.ExecuteNonQuery();
-            conexion.Close();
-           
-        }
+      
 
-        public int ProximoCliente()
-        {
-            conexion.Open();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "SP_PROXIMO_CLIENTE";
-            SqlParameter parametro = new SqlParameter();
-            parametro.ParameterName = "@nroCliente";
-            parametro.SqlDbType = SqlDbType.Int;
-            parametro.Direction = ParameterDirection.Output;
-            comando.Parameters.Add(parametro);
-            comando.ExecuteNonQuery();
-            conexion.Close();
-            return (int)parametro.Value;
-        }
+     
 
 
         public DataTable Consultar(string nombreSp)
@@ -84,14 +58,54 @@ namespace VetApp.Datos
             conexion.Close();
             return tabla;
         }
+      
+        public DataTable Consultar(string nombreSp, int nroAtencion)
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSp;
+
+            comando.Parameters.AddWithValue("@atencion", nroAtencion);
+            
+
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            conexion.Close();
+            return tabla;
+        }
+
+
+        public DataTable Consultar(string nombreSP, List<Parametro> lstParametros)
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.Clear();
+            foreach (Parametro p in lstParametros)
+            {
+                comando.Parameters.AddWithValue(p.Nombre, p.Valor);
+            }
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            conexion.Close();
+            return tabla;
+        }
 
         public   bool Confirmar(Cliente cliente, Mascota mascota, Atencion atencion)
         {
             bool resultado = true;
+            SqlTransaction t = null;
             try
             {
                 conexion.Open();
-                SqlCommand cmd = new SqlCommand("SP_INSERTAR_MASCOTA", conexion);
+
+                t= conexion.BeginTransaction();
+                
+                SqlCommand cmd = new SqlCommand("SP_INSERTAR_MASCOTA", conexion,t);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nombre",mascota.Nombre);
                 cmd.Parameters.AddWithValue("@edad",mascota.Edad);
@@ -106,19 +120,21 @@ namespace VetApp.Datos
                 int cAtencion = 1;
                 foreach (Atencion a in mascota.lstAtenciones)
                 {
-                    SqlCommand cmdAtencion = new SqlCommand("SP_INSERTAR_ATENCION", conexion);
+                    SqlCommand cmdAtencion = new SqlCommand("SP_INSERTAR_ATENCION", conexion,t);
                     cmdAtencion.CommandType = CommandType.StoredProcedure;
-                    cmdAtencion.Parameters.AddWithValue("@descripcion", atencion.Descripcion);
+                    cmdAtencion.Parameters.AddWithValue("@tratamiento", atencion.Descripcion);
                     cmdAtencion.Parameters.AddWithValue("@importe", atencion.Importe);
                     cmdAtencion.Parameters.AddWithValue("@fecha", atencion.Fecha);
                     cmdAtencion.Parameters.AddWithValue("@mascota", nroMascota);
                     cmdAtencion.ExecuteNonQuery();
                     cAtencion++;
                 }
+                t.Commit();
             }
             catch (Exception)
             {
-
+                t.Rollback();
+                
                 resultado=false;
             }
             finally 

@@ -34,24 +34,14 @@ namespace VetApp.Vistas
             TxtFecha.Enabled = false;
 
 
+
             cargarCliente();
             cargarTipo();
 
             LblNroAtencion.Text = LblNroAtencion.Text + " " + gestor.ProximaAtencion().ToString();
         }
 
-        public int ObtenerIdClienteSeleccionado()
-        {
-
-            if (CboCliente.SelectedItem is Cliente clienteSeleccionado)
-            {
-                return clienteSeleccionado.IdCliente; // Reemplaza "Id" con el nombre de la propiedad que almacena el ID del cliente
-            }
-            else
-            {
-                throw new InvalidOperationException("No se ha seleccionado ningún cliente válido.");
-            }
-        }
+      
 
         private void cargarCliente()
         {

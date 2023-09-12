@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VetApp.Datos;
 using VetApp.Dominio;
+using VetApp.Presentacion;
 using VetApp.Vistas;
 
 namespace VetApp
@@ -81,6 +82,12 @@ namespace VetApp
         private void LstClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           FrmConsultaAtencion consulta =new FrmConsultaAtencion();
+            consulta.ShowDialog();
         }
     }
 }
