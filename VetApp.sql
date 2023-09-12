@@ -1,5 +1,5 @@
-create database VetApp_0_3
-use VetApp_0_3
+create database VetApp3
+use VetApp3
 
 
 create table tipos_mascotas
@@ -21,12 +21,12 @@ create table clientes
 
 create table mascotas
 (
- id_mascota int identity (1,1),
+ cod_mascota int identity (1,1),
  nombreM varchar(100),
  edad int,
  tipo int not null,
  cliente int not null
- constraint pk_mascota primary key(id_mascota),
+ constraint pk_mascota primary key(cod_mascota),
  constraint fk_tipo foreign key(tipo) references tipos_mascotas(id_tipo_mascota),
  constraint fk_cliente foreign key(cliente) references clientes(id_cliente)
 )
@@ -39,7 +39,7 @@ create table atenciones
  fecha datetime,
  mascota int not null
  constraint pk_atencion primary key(id_atencion),
- constraint fk_mascota foreign key(mascota) references mascotas(id_mascota)
+ constraint fk_mascota foreign key(mascota) references mascotas(cod_mascota)
 )
 
 CREATE PROCEDURE SP_CONSULTAR_MASCOTAS
@@ -103,15 +103,15 @@ BEGIN
 select a.id_atencion,t.descripcion,a.importe,a.fecha,a.tratamiento
 from tipos_mascotas t join mascotas m on t.id_tipo_mascota=m.tipo
 join clientes c on c.id_cliente=m.cliente 
-join atenciones a on a.mascota=m.id_mascota
+join atenciones a on a.mascota=m.cod_mascota
 where c.nombreC=@nombreC and m.nombreM=@nombreM
 END
 
-create procedure SP_CONSULTA_MASCOTAS
+create procedure SP_CONSULTA_MASCOTA
 @atencion int
 as
 begin
-select cod_mascota,nombreM,edad,descripcion,nombreC
+select m.cod_mascota,m.nombreM,edad,descripcion,c.nombreC
 from mascotas m join atenciones a on m.cod_mascota=a.mascota 
 join tipos_mascotas t on t.id_tipo_mascota=m.tipo
 join clientes c on c.id_cliente=m.cliente
@@ -226,6 +226,8 @@ INSERT INTO mascotas (nombreM, edad, tipo, cliente) VALUES ('Fluffy', 4, 4, 9);
 INSERT INTO mascotas (nombreM, edad, tipo, cliente) VALUES ('Oreo', 1, 5, 10);
 INSERT INTO mascotas (nombreM, edad, tipo, cliente) VALUES ('Simba', 5, 1, 11);
 INSERT INTO mascotas (nombreM, edad, tipo, cliente) VALUES ('Misty', 3, 2, 12);
+INSERT INTO mascotas (nombreM, edad, tipo, cliente) VALUES ('Michifus', 7, 2, 12);
+INSERT INTO mascotas (nombreM, edad, tipo, cliente) VALUES ('Firulais', 9, 1, 5);
 
 INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Vacunación anual', 50.00, '2023-01-15', 1);
 INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Revisión dental', 30.00, '2023-02-20', 2);

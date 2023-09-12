@@ -33,7 +33,7 @@ namespace VetApp.Presentacion
         private void cargarGrilla()
         {
             DataTable dt = new DataTable();
-            dt = gestor.Consultar("SP_CONSULTA_MASCOTAS", Nro);
+            dt = gestor.Consultar("SP_CONSULTA_MASCOTA", Nro);
            
 
             foreach (DataRow fila in dt.Rows)
