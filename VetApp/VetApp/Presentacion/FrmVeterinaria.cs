@@ -89,5 +89,11 @@ namespace VetApp
            FrmConsultaAtencion consulta =new FrmConsultaAtencion();
             consulta.ShowDialog();
         }
+
+        private void mascotasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+          ReporteMascota RPT= new ReporteMascota();
+            RPT.ShowDialog();
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mascotasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(783, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(615, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -103,10 +104,19 @@
             // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mascotasToolStripMenuItem1});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(95, 21);
             this.reportesToolStripMenuItem.Text = "Reportes";
             this.reportesToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mascotasToolStripMenuItem1
+            // 
+            this.mascotasToolStripMenuItem1.Name = "mascotasToolStripMenuItem1";
+            this.mascotasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.mascotasToolStripMenuItem1.Text = "Mascotas";
+            this.mascotasToolStripMenuItem1.Click += new System.EventHandler(this.mascotasToolStripMenuItem1_Click);
             // 
             // FrmVeterinaria
             // 
@@ -115,7 +125,7 @@
             this.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.BackgroundImage = global::VetApp.Properties.Resources.undraw_welcome_cats_thqn;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(783, 548);
+            this.ClientSize = new System.Drawing.Size(615, 394);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -140,6 +150,7 @@
         private System.Windows.Forms.ToolStripMenuItem mascotasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mascotasToolStripMenuItem1;
     }
 }
 

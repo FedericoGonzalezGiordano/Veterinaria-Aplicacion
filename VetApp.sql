@@ -119,6 +119,14 @@ where a.id_atencion=@atencion
 end
 
 
+CREATE PROCEDURE SP_CONSULTA_MASCOTAS
+AS
+BEGIN
+
+    SELECT m.cod_mascota,t.descripcion,m.edad from MASCOTAS m join tipos_mascotas t on m.tipo=t.id_tipo_mascota
+END
+
+
 
 
 INSERT INTO tipos_mascotas (descripcion) VALUES ('Perro');

@@ -30,12 +30,12 @@
         {
             this.LblMascotas = new System.Windows.Forms.Label();
             this.DgvMascotas = new System.Windows.Forms.DataGridView();
-            this.BtnSalir = new System.Windows.Forms.Button();
             this.ColIdMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColEdad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMascotas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,21 +67,8 @@
             this.DgvMascotas.Name = "DgvMascotas";
             this.DgvMascotas.ReadOnly = true;
             this.DgvMascotas.Size = new System.Drawing.Size(563, 113);
-            this.DgvMascotas.TabIndex = 1;
+            this.DgvMascotas.TabIndex = 0;
             this.DgvMascotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.ForeColor = System.Drawing.SystemColors.Info;
-            this.BtnSalir.Location = new System.Drawing.Point(434, 176);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(129, 34);
-            this.BtnSalir.TabIndex = 2;
-            this.BtnSalir.Text = "Salir";
-            this.BtnSalir.UseVisualStyleBackColor = false;
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // ColIdMascota
             // 
@@ -113,6 +100,19 @@
             this.ColCliente.HeaderText = "Cliente";
             this.ColCliente.Name = "ColCliente";
             this.ColCliente.ReadOnly = true;
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSalir.ForeColor = System.Drawing.SystemColors.Info;
+            this.BtnSalir.Location = new System.Drawing.Point(434, 176);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(129, 34);
+            this.BtnSalir.TabIndex = 1;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = false;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // FrmDetallesConsultaAtencion
             // 

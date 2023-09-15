@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblNroAtencion = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.DgvAtenciones = new System.Windows.Forms.DataGridView();
@@ -74,7 +74,7 @@
             this.TxtNombre.Location = new System.Drawing.Point(159, 114);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(317, 22);
-            this.TxtNombre.TabIndex = 4;
+            this.TxtNombre.TabIndex = 5;
             // 
             // DgvAtenciones
             // 
@@ -92,14 +92,14 @@
             this.DgvAtenciones.Name = "DgvAtenciones";
             this.DgvAtenciones.ReadOnly = true;
             this.DgvAtenciones.Size = new System.Drawing.Size(443, 138);
-            this.DgvAtenciones.TabIndex = 11;
+            this.DgvAtenciones.TabIndex = 15;
             this.DgvAtenciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAtenciones_CellContentClick);
             // 
             // ColFecha
             // 
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.ColFecha.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ColFecha.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColFecha.HeaderText = "Fecha";
             this.ColFecha.Name = "ColFecha";
             this.ColFecha.ReadOnly = true;
@@ -130,7 +130,7 @@
             this.LblNombre.Location = new System.Drawing.Point(30, 114);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(125, 16);
-            this.LblNombre.TabIndex = 5;
+            this.LblNombre.TabIndex = 4;
             this.LblNombre.Text = "Nombre Mascota";
             // 
             // LblEdad
@@ -141,7 +141,7 @@
             this.LblEdad.Location = new System.Drawing.Point(86, 174);
             this.LblEdad.Name = "LblEdad";
             this.LblEdad.Size = new System.Drawing.Size(44, 16);
-            this.LblEdad.TabIndex = 7;
+            this.LblEdad.TabIndex = 8;
             this.LblEdad.Text = "Edad";
             this.LblEdad.Click += new System.EventHandler(this.LblEdad_Click);
             // 
@@ -153,7 +153,7 @@
             this.LblTipo.Location = new System.Drawing.Point(90, 140);
             this.LblTipo.Name = "LblTipo";
             this.LblTipo.Size = new System.Drawing.Size(39, 16);
-            this.LblTipo.TabIndex = 9;
+            this.LblTipo.TabIndex = 6;
             this.LblTipo.Text = "Tipo";
             // 
             // TxtEdad
@@ -164,7 +164,7 @@
             this.TxtEdad.Location = new System.Drawing.Point(159, 167);
             this.TxtEdad.Name = "TxtEdad";
             this.TxtEdad.Size = new System.Drawing.Size(45, 22);
-            this.TxtEdad.TabIndex = 8;
+            this.TxtEdad.TabIndex = 9;
             this.TxtEdad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cboTipo
@@ -176,7 +176,7 @@
             this.cboTipo.Location = new System.Drawing.Point(159, 140);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(209, 24);
-            this.cboTipo.TabIndex = 10;
+            this.cboTipo.TabIndex = 7;
             // 
             // BtnAceptar
             // 
@@ -186,7 +186,7 @@
             this.BtnAceptar.Location = new System.Drawing.Point(71, 407);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(115, 40);
-            this.BtnAceptar.TabIndex = 12;
+            this.BtnAceptar.TabIndex = 16;
             this.BtnAceptar.Text = "Aceptar";
             this.BtnAceptar.UseVisualStyleBackColor = false;
             this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
@@ -199,19 +199,22 @@
             this.BtnCancelar.Location = new System.Drawing.Point(399, 407);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(115, 40);
-            this.BtnCancelar.TabIndex = 13;
+            this.BtnCancelar.TabIndex = 17;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(405, 234);
+            this.BtnAgregar.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.ForeColor = System.Drawing.Color.AliceBlue;
+            this.BtnAgregar.Location = new System.Drawing.Point(405, 230);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(109, 23);
-            this.BtnAgregar.TabIndex = 15;
+            this.BtnAgregar.Size = new System.Drawing.Size(109, 27);
+            this.BtnAgregar.TabIndex = 14;
             this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // LblCliente
@@ -222,7 +225,7 @@
             this.LblCliente.Location = new System.Drawing.Point(79, 90);
             this.LblCliente.Name = "LblCliente";
             this.LblCliente.Size = new System.Drawing.Size(55, 16);
-            this.LblCliente.TabIndex = 16;
+            this.LblCliente.TabIndex = 2;
             this.LblCliente.Text = "Cliente";
             // 
             // CboCliente
@@ -234,7 +237,7 @@
             this.CboCliente.Location = new System.Drawing.Point(159, 87);
             this.CboCliente.Name = "CboCliente";
             this.CboCliente.Size = new System.Drawing.Size(317, 24);
-            this.CboCliente.TabIndex = 17;
+            this.CboCliente.TabIndex = 3;
             this.CboCliente.SelectedIndexChanged += new System.EventHandler(this.CboCliente_SelectedIndexChanged);
             // 
             // LblFecha
@@ -245,7 +248,7 @@
             this.LblFecha.Location = new System.Drawing.Point(79, 58);
             this.LblFecha.Name = "LblFecha";
             this.LblFecha.Size = new System.Drawing.Size(50, 16);
-            this.LblFecha.TabIndex = 18;
+            this.LblFecha.TabIndex = 0;
             this.LblFecha.Text = "Fecha";
             // 
             // TxtFecha
@@ -256,7 +259,7 @@
             this.TxtFecha.Location = new System.Drawing.Point(159, 55);
             this.TxtFecha.Name = "TxtFecha";
             this.TxtFecha.Size = new System.Drawing.Size(161, 20);
-            this.TxtFecha.TabIndex = 19;
+            this.TxtFecha.TabIndex = 1;
             // 
             // LblTratamiento
             // 
@@ -266,7 +269,7 @@
             this.LblTratamiento.Location = new System.Drawing.Point(55, 202);
             this.LblTratamiento.Name = "LblTratamiento";
             this.LblTratamiento.Size = new System.Drawing.Size(90, 16);
-            this.LblTratamiento.TabIndex = 20;
+            this.LblTratamiento.TabIndex = 10;
             this.LblTratamiento.Text = "Tratamiento";
             // 
             // txtTratatamiento
@@ -277,7 +280,7 @@
             this.txtTratatamiento.Location = new System.Drawing.Point(159, 199);
             this.txtTratatamiento.Name = "txtTratatamiento";
             this.txtTratatamiento.Size = new System.Drawing.Size(161, 22);
-            this.txtTratatamiento.TabIndex = 21;
+            this.txtTratatamiento.TabIndex = 11;
             // 
             // LblImporte
             // 
@@ -288,7 +291,7 @@
             this.LblImporte.Location = new System.Drawing.Point(326, 202);
             this.LblImporte.Name = "LblImporte";
             this.LblImporte.Size = new System.Drawing.Size(59, 16);
-            this.LblImporte.TabIndex = 22;
+            this.LblImporte.TabIndex = 12;
             this.LblImporte.Text = "Importe";
             // 
             // TxtImporte
@@ -299,7 +302,7 @@
             this.TxtImporte.Location = new System.Drawing.Point(391, 202);
             this.TxtImporte.Name = "TxtImporte";
             this.TxtImporte.Size = new System.Drawing.Size(128, 22);
-            this.TxtImporte.TabIndex = 23;
+            this.TxtImporte.TabIndex = 13;
             // 
             // FrmAtenciones
             // 
@@ -307,7 +310,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(559, 461);
+            this.ClientSize = new System.Drawing.Size(559, 466);
             this.Controls.Add(this.TxtImporte);
             this.Controls.Add(this.LblImporte);
             this.Controls.Add(this.txtTratatamiento);

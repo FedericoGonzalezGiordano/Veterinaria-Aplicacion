@@ -54,7 +54,7 @@
             this.TxtCliente.Location = new System.Drawing.Point(98, 27);
             this.TxtCliente.Name = "TxtCliente";
             this.TxtCliente.Size = new System.Drawing.Size(298, 22);
-            this.TxtCliente.TabIndex = 0;
+            this.TxtCliente.TabIndex = 1;
             this.TxtCliente.Text = "Nombre del Cliente";
             // 
             // LblNombreCliente
@@ -63,7 +63,7 @@
             this.LblNombreCliente.Location = new System.Drawing.Point(40, 27);
             this.LblNombreCliente.Name = "LblNombreCliente";
             this.LblNombreCliente.Size = new System.Drawing.Size(55, 16);
-            this.LblNombreCliente.TabIndex = 2;
+            this.LblNombreCliente.TabIndex = 0;
             this.LblNombreCliente.Text = "Cliente";
             // 
             // LblMascota
@@ -72,7 +72,7 @@
             this.LblMascota.Location = new System.Drawing.Point(31, 56);
             this.LblMascota.Name = "LblMascota";
             this.LblMascota.Size = new System.Drawing.Size(66, 16);
-            this.LblMascota.TabIndex = 3;
+            this.LblMascota.TabIndex = 2;
             this.LblMascota.Text = "Mascota";
             // 
             // TxtMascota
@@ -81,7 +81,7 @@
             this.TxtMascota.Location = new System.Drawing.Point(98, 53);
             this.TxtMascota.Name = "TxtMascota";
             this.TxtMascota.Size = new System.Drawing.Size(298, 22);
-            this.TxtMascota.TabIndex = 1;
+            this.TxtMascota.TabIndex = 2;
             this.TxtMascota.Text = "Nombre de la mascota";
             // 
             // Consultar
@@ -90,7 +90,7 @@
             this.Consultar.Location = new System.Drawing.Point(482, 56);
             this.Consultar.Name = "Consultar";
             this.Consultar.Size = new System.Drawing.Size(97, 30);
-            this.Consultar.TabIndex = 7;
+            this.Consultar.TabIndex = 3;
             this.Consultar.Text = "Consultar";
             this.Consultar.UseVisualStyleBackColor = false;
             this.Consultar.Click += new System.EventHandler(this.Consultar_Click);
@@ -108,7 +108,7 @@
             this.groupBox1.Location = new System.Drawing.Point(29, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(585, 92);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -121,7 +121,7 @@
             this.BtnModificar.Location = new System.Drawing.Point(29, 254);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(104, 28);
-            this.BtnModificar.TabIndex = 8;
+            this.BtnModificar.TabIndex = 3;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = false;
             // 
@@ -133,7 +133,7 @@
             this.BtnEliminar.Location = new System.Drawing.Point(166, 254);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(104, 28);
-            this.BtnEliminar.TabIndex = 9;
+            this.BtnEliminar.TabIndex = 4;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = false;
             // 
@@ -146,7 +146,7 @@
             this.BtnSalir.Location = new System.Drawing.Point(522, 254);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(104, 28);
-            this.BtnSalir.TabIndex = 10;
+            this.BtnSalir.TabIndex = 0;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
@@ -169,7 +169,7 @@
             this.DgvConsultaAtencion.Name = "DgvConsultaAtencion";
             this.DgvConsultaAtencion.ReadOnly = true;
             this.DgvConsultaAtencion.Size = new System.Drawing.Size(597, 119);
-            this.DgvConsultaAtencion.TabIndex = 11;
+            this.DgvConsultaAtencion.TabIndex = 2;
             this.DgvConsultaAtencion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsultaAtencion_CellContentClick);
             // 
             // ColAtencion
