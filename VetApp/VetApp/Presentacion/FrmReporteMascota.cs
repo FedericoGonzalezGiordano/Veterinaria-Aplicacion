@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VetApp.Presentacion
 {
-    public partial class ReporteMascota : Form
+    public partial class FrmReporteMascota : Form
     {
-        public ReporteMascota()
+        public FrmReporteMascota()
         {
             InitializeComponent();
         }

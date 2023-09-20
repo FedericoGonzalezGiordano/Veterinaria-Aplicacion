@@ -66,7 +66,7 @@
             this.DgvMascotas.Location = new System.Drawing.Point(16, 47);
             this.DgvMascotas.Name = "DgvMascotas";
             this.DgvMascotas.ReadOnly = true;
-            this.DgvMascotas.Size = new System.Drawing.Size(563, 113);
+            this.DgvMascotas.Size = new System.Drawing.Size(563, 64);
             this.DgvMascotas.TabIndex = 0;
             this.DgvMascotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -106,7 +106,7 @@
             this.BtnSalir.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSalir.ForeColor = System.Drawing.SystemColors.Info;
-            this.BtnSalir.Location = new System.Drawing.Point(434, 176);
+            this.BtnSalir.Location = new System.Drawing.Point(450, 117);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(129, 34);
             this.BtnSalir.TabIndex = 1;
@@ -119,7 +119,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.ClientSize = new System.Drawing.Size(591, 233);
+            this.ClientSize = new System.Drawing.Size(589, 163);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.DgvMascotas);
             this.Controls.Add(this.LblMascotas);

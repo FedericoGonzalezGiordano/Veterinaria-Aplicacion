@@ -81,22 +81,44 @@
     <Compile Include="Presentacion\FrmDetallesConsultaAtencion.Designer.cs">
       <DependentUpon>FrmDetallesConsultaAtencion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\FrmVeterinaria.cs">
+    <Compile Include="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FrmVeterinaria.Designer.cs">
-      <DependentUpon>FrmVeterinaria.cs</DependentUpon>
+    <Compile Include="Presentacion\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\ReporteMascota.cs">
+    <Compile Include="Presentacion\FrmReporteMascota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\ReporteMascota.Designer.cs">
-      <DependentUpon>ReporteMascota.cs</DependentUpon>
+    <Compile Include="Presentacion\FrmReporteMascota.Designer.cs">
+      <DependentUpon>FrmReporteMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\DSMascotasAtendidas1.cs">
+      <DependentUpon>DSMascotasAtendidas1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\DSMascotasAtendidas1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMascotasAtendidas1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\DSMascotas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSMascotas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\DSMascotasAtendidas.cs">
+      <DependentUpon>DSMascotasAtendidas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\DSMascotasAtendidas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMascotasAtendidas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteMascotasAtendidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteMascotasAtendidas.Designer.cs">
+      <DependentUpon>FrmReporteMascotasAtendidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,10 +135,14 @@
     <EmbeddedResource Include="Presentacion\FrmDetallesConsultaAtencion.resx">
       <DependentUpon>FrmDetallesConsultaAtencion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\ReporteMascota.resx">
-      <DependentUpon>ReporteMascota.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\FrmReporteMascota.resx">
+      <DependentUpon>FrmReporteMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmReporteMascotasAtendidas.resx">
+      <DependentUpon>FrmReporteMascotasAtendidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\RpTMascotas.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\RpTMascotasAtendidas.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -127,13 +153,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Presentacion\FrmVeterinaria.resx">
-      <DependentUpon>FrmVeterinaria.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmAtenciones.resx">
       <DependentUpon>FrmAtenciones.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Presentacion\Reportes\DSMascotasAtendidas1.xsc">
+      <DependentUpon>DSMascotasAtendidas1.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Reportes\DSMascotasAtendidas1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMascotasAtendidas1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Presentacion\Reportes\DSMascotasAtendidas1.xss">
+      <DependentUpon>DSMascotasAtendidas1.xsd</DependentUpon>
+    </None>
     <None Include="Presentacion\Reportes\DSMascotas.xsc">
       <DependentUpon>DSMascotas.xsd</DependentUpon>
     </None>
@@ -144,6 +181,17 @@
     </None>
     <None Include="Presentacion\Reportes\DSMascotas.xss">
       <DependentUpon>DSMascotas.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Reportes\DSMascotasAtendidas.xsc">
+      <DependentUpon>DSMascotasAtendidas.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Reportes\DSMascotasAtendidas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMascotasAtendidas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Presentacion\Reportes\DSMascotasAtendidas.xss">
+      <DependentUpon>DSMascotasAtendidas.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,7 +10,7 @@ namespace VetApp.Dominio
     {
         public int IdAtencion { get; set; }
         public string Descripcion { get; set; }
-        public double Importe { get; set; }
+        public decimal Importe { get; set; }
         public DateTime Fecha { get; set; }
 
 
@@ -23,7 +23,7 @@ namespace VetApp.Dominio
             Fecha = DateTime.Today;
 
         }
-        public Atencion(string Descripcion, double Importe, DateTime Fecha)
+        public Atencion(string Descripcion, decimal Importe, DateTime Fecha)
         {
             this.Descripcion = Descripcion;
             this.Importe = Importe; 

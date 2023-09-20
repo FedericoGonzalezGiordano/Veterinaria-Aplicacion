@@ -16,7 +16,7 @@ namespace VetApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmVeterinaria());
+            Application.Run(new FrmPrincipal());
         }
     }
 }

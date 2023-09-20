@@ -20,7 +20,7 @@ namespace VetApp.Datos
        
         public DbHelper()
         {
-               cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=VetApp3;Integrated Security=True";
+               cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=VetApp;Integrated Security=True";
                conexion = new SqlConnection(cadenaConexion);
          
         }
@@ -79,6 +79,7 @@ namespace VetApp.Datos
 
         public DataTable Consultar(string nombreSP, List<Parametro> lstParametros)
         {
+            DataTable tabla = new DataTable();
             conexion.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexion;
@@ -89,13 +90,14 @@ namespace VetApp.Datos
             {
                 comando.Parameters.AddWithValue(p.Nombre, p.Valor);
             }
-            DataTable tabla = new DataTable();
+           
             tabla.Load(comando.ExecuteReader());
             conexion.Close();
             return tabla;
         }
 
-        public   bool Confirmar(Cliente cliente, Mascota mascota, Atencion atencion)
+
+        public  bool Confirmar(Cliente cliente, Mascota mascota, Atencion atencion)
         {
             bool resultado = true;
             SqlTransaction t = null;

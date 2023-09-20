@@ -77,7 +77,7 @@ namespace VetApp.Vistas
 
                 string descripcion = txtTratatamiento.Text;
                 DateTime fecha = Convert.ToDateTime(TxtFecha.Text);
-                double importe = Convert.ToDouble(TxtImporte.Text);
+                decimal importe = Convert.ToDecimal(TxtImporte.Text);
 
                 Cliente c = new Cliente(id, nom, sexo);
                 c.AgregarMascota(mascota);
@@ -122,7 +122,7 @@ namespace VetApp.Vistas
                 txtTratatamiento.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(TxtImporte.Text) || !double.TryParse(TxtImporte.Text, out _))
+            if (string.IsNullOrEmpty(TxtImporte.Text) || !decimal.TryParse(TxtImporte.Text, out _))
             {
                 MessageBox.Show("Debe ingresar un importe valido..", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TxtImporte.Focus();
@@ -172,7 +172,7 @@ namespace VetApp.Vistas
             mascota.Tipo = Convert.ToInt32(cboTipo.SelectedIndex);
             cliente.IdCliente = Convert.ToInt32(CboCliente.SelectedIndex);
             atencion.Descripcion=txtTratatamiento.Text;
-            atencion.Importe = Convert.ToDouble(TxtImporte.Text);
+            atencion.Importe = Convert.ToDecimal(TxtImporte.Text);
             atencion.Fecha = Convert.ToDateTime(TxtFecha.Text);
 
             if (gestor.Confirmar(cliente,mascota,atencion))

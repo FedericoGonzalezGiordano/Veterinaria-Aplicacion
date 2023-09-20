@@ -1,7 +1,7 @@
-create database VetApp3
-use VetApp3
+create database VetApp
+use VetApp
 
-
+set dateformat dmy
 create table tipos_mascotas
 (
  id_tipo_mascota int identity (0,1),
@@ -36,7 +36,7 @@ create table atenciones
  id_atencion int identity (1,1),
  tratamiento varchar(150),
  importe decimal,
- fecha datetime,
+ fecha date,
  mascota int not null
  constraint pk_atencion primary key(id_atencion),
  constraint fk_mascota foreign key(mascota) references mascotas(cod_mascota)
@@ -126,8 +126,17 @@ BEGIN
     SELECT m.cod_mascota,t.descripcion,m.edad from MASCOTAS m join tipos_mascotas t on m.tipo=t.id_tipo_mascota
 END
 
-
-
+CREATE procedure SP_CONSULTA_MASCOTA_ATENDIDAS
+@nombreM varchar(100),	
+@importe decimal(18,0),
+@fecha date
+as
+begin
+select m.nombreM as nombre ,avg(a.importe) as 'promedio del importe',a.fecha as fecha
+from mascotas m join atenciones a on m.cod_mascota=a.mascota 
+where m.nombreM=@nombreM and a.importe=@importe  and a.fecha=@fecha
+group by nombreM,importe,fecha
+end
 
 INSERT INTO tipos_mascotas (descripcion) VALUES ('Perro');
 INSERT INTO tipos_mascotas (descripcion) VALUES ('Gato');
@@ -237,15 +246,11 @@ INSERT INTO mascotas (nombreM, edad, tipo, cliente) VALUES ('Misty', 3, 2, 12);
 INSERT INTO mascotas (nombreM, edad, tipo, cliente) VALUES ('Michifus', 7, 2, 12);
 INSERT INTO mascotas (nombreM, edad, tipo, cliente) VALUES ('Firulais', 9, 1, 5);
 
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Vacunación anual', 50.00, '2023-01-15', 1);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Revisión dental', 30.00, '2023-02-20', 2);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Cirugía de esterilización', 100.00, '2023-03-10', 3);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Chequeo de salud', 45.00, '2023-04-05', 4);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Vacuna contra la rabia', 25.00, '2023-05-12', 5);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Limpieza dental', 35.00, '2023-06-20', 6);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Control de peso', 20.00, '2023-07-03', 7);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Desparasitación', 15.00, '2023-08-15', 8);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Vacunación felina', 28.00, '2023-09-02', 9);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Corte de uñas', 12.00, '2023-10-11', 10);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Radiografía', 75.00, '2023-11-25', 11);
-INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Esterilización', 90.00, '2023-12-05', 12);
+INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Vacunación anual', 50.00, '15-01-2023', 1);
+INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Revisión dental', 30.00, '20-02-2023', 2);
+INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Cirugía de esterilización', 100.00, '10-03-2023', 3);
+INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Chequeo de salud', 45.00, '05-04-2023', 4);
+INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Vacuna contra la rabia', 25.00, '12-05-2023', 5);
+INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Limpieza dental', 35.00, '20-06-2023', 6);
+INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Control de peso', 20.00, '03-07-2023', 7);
+INSERT INTO atenciones (tratamiento, importe, fecha, mascota) VALUES ('Desparasitación', 15.00, '15-08-2023', 8);

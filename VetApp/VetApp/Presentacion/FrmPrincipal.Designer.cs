@@ -1,6 +1,6 @@
 ﻿namespace VetApp
 {
-    partial class FrmVeterinaria
+    partial class FrmPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVeterinaria));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +38,7 @@
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mascotasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mASCOTASATENDIDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,7 +106,8 @@
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mascotasToolStripMenuItem1});
+            this.mascotasToolStripMenuItem1,
+            this.mASCOTASATENDIDASToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(95, 21);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -114,9 +116,16 @@
             // mascotasToolStripMenuItem1
             // 
             this.mascotasToolStripMenuItem1.Name = "mascotasToolStripMenuItem1";
-            this.mascotasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.mascotasToolStripMenuItem1.Size = new System.Drawing.Size(238, 22);
             this.mascotasToolStripMenuItem1.Text = "Mascotas";
             this.mascotasToolStripMenuItem1.Click += new System.EventHandler(this.mascotasToolStripMenuItem1_Click);
+            // 
+            // mASCOTASATENDIDASToolStripMenuItem
+            // 
+            this.mASCOTASATENDIDASToolStripMenuItem.Name = "mASCOTASATENDIDASToolStripMenuItem";
+            this.mASCOTASATENDIDASToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.mASCOTASATENDIDASToolStripMenuItem.Text = "MASCOTAS ATENDIDAS";
+            this.mASCOTASATENDIDASToolStripMenuItem.Click += new System.EventHandler(this.mASCOTASATENDIDASToolStripMenuItem_Click);
             // 
             // FrmVeterinaria
             // 
@@ -151,6 +160,7 @@
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mascotasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem mASCOTASATENDIDASToolStripMenuItem;
     }
 }
 

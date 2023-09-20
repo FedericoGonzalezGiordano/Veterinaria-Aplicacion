@@ -1,6 +1,6 @@
 ﻿namespace VetApp.Presentacion
 {
-    partial class ReporteMascota
+    partial class FrmReporteMascota
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.sPCONSULTAMASCOTASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSMascotas = new VetApp.Presentacion.Reportes.DSMascotas();
             this.RvMascotas = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -54,9 +54,9 @@
             // 
             this.RvMascotas.BackColor = System.Drawing.Color.MediumPurple;
             this.RvMascotas.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.sPCONSULTAMASCOTASBindingSource;
-            this.RvMascotas.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.sPCONSULTAMASCOTASBindingSource;
+            this.RvMascotas.LocalReport.DataSources.Add(reportDataSource2);
             this.RvMascotas.LocalReport.ReportEmbeddedResource = "VetApp.Presentacion.Reportes.RpTMascotas.rdlc";
             this.RvMascotas.Location = new System.Drawing.Point(0, 0);
             this.RvMascotas.Name = "RvMascotas";

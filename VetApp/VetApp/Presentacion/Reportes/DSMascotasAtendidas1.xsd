@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSMascotasAtendidas1" msprop:Generator_RowEvHandlerName="DSMascotasAtendidas1RowChangeEventHandler" msprop:Generator_RowDeletedName="DSMascotasAtendidas1RowDeleted" msprop:Generator_RowDeletingName="DSMascotasAtendidas1RowDeleting" msprop:Generator_RowEvArgName="DSMascotasAtendidas1RowChangeEvent" msprop:Generator_TablePropName="DSMascotasAtendidas1" msprop:Generator_RowChangedName="DSMascotasAtendidas1RowChanged" msprop:Generator_RowChangingName="DSMascotasAtendidas1RowChanging" msprop:Generator_TableClassName="DSMascotasAtendidas1DataTable" msprop:Generator_RowClassName="DSMascotasAtendidas1Row" msprop:Generator_TableVarName="tableDSMascotasAtendidas1" msprop:Generator_UserTableName="DSMascotasAtendidas1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="promedio_x0020_del_x0020_importe" msprop:Generator_ColumnPropNameInRow="promedio_del_importe" msprop:Generator_ColumnPropNameInTable="promedio_del_importeColumn" msprop:Generator_ColumnVarNameInTable="columnpromedio_del_importe" msprop:Generator_UserColumnName="promedio del importe" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_UserColumnName="fecha" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

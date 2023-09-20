@@ -10,15 +10,16 @@ using System.Windows.Forms;
 using VetApp.Datos;
 using VetApp.Dominio;
 using VetApp.Presentacion;
+using VetApp.Presentacion.Reportes;
 using VetApp.Vistas;
 
 namespace VetApp
 {
-    public partial class FrmVeterinaria : Form
+    public partial class FrmPrincipal : Form
     {
         
        
-        public FrmVeterinaria()
+        public FrmPrincipal()
         {
             InitializeComponent();
             
@@ -92,8 +93,14 @@ namespace VetApp
 
         private void mascotasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-          ReporteMascota RPT= new ReporteMascota();
+          FrmReporteMascota RPT= new FrmReporteMascota();
             RPT.ShowDialog();
+        }
+
+        private void mASCOTASATENDIDASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReporteMascotasAtendidas rptMAtendidas=new FrmReporteMascotasAtendidas();
+            rptMAtendidas.ShowDialog();
         }
     }
 }

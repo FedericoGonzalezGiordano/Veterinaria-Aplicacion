@@ -39,7 +39,6 @@ C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\bin\Debug\Vet
 C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\bin\Debug\VetApp.pdb
 C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.csproj.AssemblyReference.cache
 C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.Properties.Resources.resources
-C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.FrmVeterinaria.resources
 C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.Vistas.FrmAtenciones.resources
 C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.csproj.GenerateResource.cache
 C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.csproj.CoreCompileInputs.cache
@@ -108,4 +107,6 @@ C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\bin\Debug\zh-
 C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.csproj.CopyComplete
-C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.Presentacion.ReporteMascota.resources
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.Presentacion.FrmReporteMascota.resources
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.Presentacion.Reportes.FrmReporteMascotasAtendidas.resources
+C:\Users\Federico gonzalez\Desktop\VetApp-405516-1w1\VetApp\VetApp\obj\Debug\VetApp.FrmPrincipal.resources
